@@ -6,12 +6,12 @@
  * Time: 9:41
  */
 
-namespace Backendidsiapps\Interfaces\SmmAPI;
+namespace Backendidsiapps\SmmAPI\ISmmAPI;
 
 
 use Backendidsiapps\SmmAPI\OrderAPI;
 
-interface SmmAPI
+interface ISmmAPI
 {
     /**
      * @return float

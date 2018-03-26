@@ -8,7 +8,9 @@
 
 namespace Backendidsiapps\SmmAPI;
 
-class SmmAPI implements \Backendidsiapps\Interfaces\SmmAPI\SmmAPI
+use Backendidsiapps\SmmAPI\ISmmAPI\ISmmAPI;
+
+class SmmAPI implements ISmmAPI
 {
     private $api_url = '';
     private $apiKey  = '';

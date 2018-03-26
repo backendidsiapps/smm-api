@@ -25,8 +25,8 @@ class SmmAPIServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(\Backendidsiapps\Interfaces\SmmAPI\SmmAPI::class, function ($app) {
-            return new SmmAPI(config('smm_api.key'));
+        $this->app->singleton(\Backendidsiapps\Interfaces\SmmAPI\ISmmAPI::class, function ($app) {
+            return new ISmmAPI(config('smm_api.key'));
         });
     }
 }
