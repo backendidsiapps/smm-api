@@ -2,6 +2,7 @@
 
 namespace Backendidsiapps\SmmAPI;
 
+use Backendidsiapps\SmmAPI\ISmmAPI\ISmmAPI;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -25,8 +26,8 @@ class SmmAPIServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(\Backendidsiapps\Interfaces\SmmAPI\ISmmAPI::class, function ($app) {
-            return new ISmmAPI(config('smm_api.key'));
+        $this->app->singleton(ISmmAPI::class, function ($app) {
+            return new SmmAPI(config('smm_api.key'));
         });
     }
 }
