@@ -74,10 +74,10 @@ class SmmAPI implements ISmmAPI
 
     public function getBalance(): float
     { // get balance
-        return (float)json_decode($this->request([
+        return (float)optional(json_decode($this->request([
             'key'    => $this->apiKey,
             'action' => 'balance',
-        ]))->balance;
+        ])))->balance;
     }
 
 
