@@ -15,7 +15,9 @@ add this to composer.json and run `composer update"`
      ...
     }
 ```
-add to .env
+``php artisan vendor:publish --provider="Backendidsiapps\SmmAPI\SmmAPIServiceProvider"
+``
+and add to .env
 ```
 SMM_API_KEY=YOURAPIKEY
 ```
