@@ -1,0 +1,31 @@
+{
+  "name": "backendidsiapps/smm-api",
+  "keywords": [
+    "laravel",
+    "smm"
+  ],
+  "license": "MIT",
+  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Backend",
+      "email": "backendidsiapps@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Backendidsiapps\\SmmAPI\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Backendidsiapps\\SmmAPI\\SmmAPIServiceProvider"
+      ]
+    }
+  }
+}
