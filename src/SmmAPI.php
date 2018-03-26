@@ -54,15 +54,15 @@ class SmmAPI implements ISmmAPI
             'order'  => $order_id,
         ]));
     }
-
-    public function multiStatus($order_ids)
-    { // get order status
-        return json_decode($this->request([
-            'key'    => $this->apiKey,
-            'action' => 'status',
-            'orders' => implode(",", (array)$order_ids),
-        ]));
-    }
+//
+//    public function multiStatus($order_ids)
+//    { // get order status
+//        return json_decode($this->request([
+//            'key'    => $this->apiKey,
+//            'action' => 'status',
+//            'orders' => implode(",", (array)$order_ids),
+//        ]));
+//    }
 
     public function getServices()
     { // get services
@@ -72,12 +72,12 @@ class SmmAPI implements ISmmAPI
         ]));
     }
 
-    public function getBalance(): float
+    public function getBalance()
     { // get balance
-        return (float)optional(json_decode($this->request([
-            'key'    => $this->apiKey,
-            'action' => 'balance',
-        ])))->balance;
+        return json_decode($this->request([
+                'key'    => $this->apiKey,
+                'action' => 'balance',
+            ])) ?? (object)['balance' => 0, 'currency' => 'USD'];
     }
 
 

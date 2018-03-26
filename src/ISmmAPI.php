@@ -16,7 +16,7 @@ interface ISmmAPI
     /**
      * @return float
      */
-    public function getBalance(): float;
+    public function getBalance();
 
     /**
      * @return mixed
