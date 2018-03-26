@@ -18,7 +18,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Backendidsiapps\\SmmAPI\\": "src/"
+      "Backendidsiapps\\SmmAPI\\": "src/",
+      "Backendidsiapps\\SmmAPI\\Interfaces": "src/interfaces"
     }
   },
   "extra": {
