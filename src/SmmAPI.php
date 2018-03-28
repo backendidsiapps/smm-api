@@ -43,7 +43,7 @@ class SmmAPI implements ISmmAPI
     { // add order
         $post = array_merge(['key' => $this->apiKey, 'action' => 'add'], $order->toArray());
 
-//        return json_decode($this->request($post)); //TODO: uncomment
+        return json_decode($this->request($post));
     }
 
     public function orderStatus(int $order_id)
