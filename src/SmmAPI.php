@@ -46,7 +46,7 @@ class SmmAPI implements ISmmAPI
 //        return json_decode($this->request($post)); //TODO: uncomment
     }
 
-    public function orderStatus($order_id)
+    public function orderStatus(int $order_id)
     { // get order status
         return json_decode($this->request([
             'key'    => $this->apiKey,
