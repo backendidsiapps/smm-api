@@ -20,7 +20,7 @@ class SmmAPIServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes(
-            [__DIR__ . '/config/smm_api.php' => config_path('smm_api.php'),], 'config'
+            [__DIR__.'/config/smm_api.php' => config_path('smm_api.php')], 'config'
         );
     }
 
