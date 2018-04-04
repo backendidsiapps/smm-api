@@ -13,8 +13,8 @@ use Backendidsiapps\SmmAPI\ISmmAPI\ISmmAPI;
 class SmmAPI implements ISmmAPI
 {
     private $api_url = '';
-    private $apiKey = '';
-    private $curl = null;
+    private $apiKey  = '';
+    private $curl    = null;
 
     /**
      * Api constructor.
@@ -39,7 +39,7 @@ class SmmAPI implements ISmmAPI
     }
 
     public function orderCreate(OrderAPI $order)
-    { // add order
+    {
         $post = array_merge(['key' => $this->apiKey, 'action' => 'add'], $order->toArray());
 
         return json_decode($this->request($post));
@@ -77,7 +77,7 @@ class SmmAPI implements ISmmAPI
         return json_decode($this->request([
                 'key'    => $this->apiKey,
                 'action' => 'balance',
-            ])) ?? (object) ['balance' => 0, 'currency' => 'USD'];
+            ])) ?? (object)['balance' => 0, 'currency' => 'USD'];
     }
 
     private function request($post)
@@ -85,7 +85,7 @@ class SmmAPI implements ISmmAPI
         $_post = [];
         if (is_array($post)) {
             foreach ($post as $name => $value) {
-                $_post[] = $name.'='.urlencode($value);
+                $_post[] = $name . '=' . urlencode($value);
             }
         }
 
