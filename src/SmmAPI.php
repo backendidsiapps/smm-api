@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: backend
  * Date: 26.03.18
- * Time: 9:20
+ * Time: 9:20.
  */
 
 namespace Backendidsiapps\SmmAPI;
@@ -13,8 +13,8 @@ use Backendidsiapps\SmmAPI\ISmmAPI\ISmmAPI;
 class SmmAPI implements ISmmAPI
 {
     private $api_url = '';
-    private $apiKey  = '';
-    private $curl    = null;
+    private $apiKey = '';
+    private $curl = null;
 
     /**
      * Api constructor.
@@ -25,7 +25,6 @@ class SmmAPI implements ISmmAPI
         $this->curl = curl_init($this->api_url);
         $this->init();
         $this->apiKey = $apiKey;
-
     }
 
     private function init()
@@ -54,6 +53,7 @@ class SmmAPI implements ISmmAPI
             'order'  => $order_id,
         ]));
     }
+
 //
 //    public function multiStatus($order_ids)
 //    { // get order status
@@ -77,21 +77,20 @@ class SmmAPI implements ISmmAPI
         return json_decode($this->request([
                 'key'    => $this->apiKey,
                 'action' => 'balance',
-            ])) ?? (object)['balance' => 0, 'currency' => 'USD'];
+            ])) ?? (object) ['balance' => 0, 'currency' => 'USD'];
     }
-
 
     private function request($post)
     {
         $_post = [];
         if (is_array($post)) {
             foreach ($post as $name => $value) {
-                $_post[] = $name . '=' . urlencode($value);
+                $_post[] = $name.'='.urlencode($value);
             }
         }
 
         if (is_array($post)) {
-            curl_setopt($this->curl, CURLOPT_POSTFIELDS, join('&', $_post));
+            curl_setopt($this->curl, CURLOPT_POSTFIELDS, implode('&', $_post));
         }
         $result = curl_exec($this->curl);
         if (curl_errno($this->curl) != 0 && empty($result)) {
